@@ -1,0 +1,5 @@
+#TO CREATE TOPIC NAMED 'historical'
+docker exec docker_kafka_cluster_kafka_1 kafka-topics.sh --create --zookeeper zookeeper --replication-factor 3 --partitions 3 --topic sensor_data
+
+#TO LIST ALL TOPICS
+docker exec -it docker_kafka_cluster_kafka2_1 kafka-topics.sh  --zookeeper zookeeper --list

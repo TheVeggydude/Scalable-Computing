@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    io.service: db-interface
+  name: db-interface
+spec:
+  ports:
+  - name: "4004"
+    port: 4004
+    targetPort: 4004
+  selector:
+    io.service: db-interface
+status:
+  loadBalancer: {}

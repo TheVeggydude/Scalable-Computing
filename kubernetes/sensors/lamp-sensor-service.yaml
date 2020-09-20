@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    io.service: lamp-sensor
+  name: lamp-sensor
+spec:
+  ports:
+  - name: "3011"
+    port: 3011
+    targetPort: 3011
+  selector:
+    io.kompose.service: lamp-sensor
+status:
+  loadBalancer: {}

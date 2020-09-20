@@ -1,0 +1,18 @@
+version: '3'
+
+networks:
+  household-network:
+    driver: bridge
+
+volumes:
+  cassandra-volume:
+  zookeeper_data:
+    driver: local
+  kafka_data:
+    driver: local
+  kafka2_data:
+    driver: local
+  kafka3_data:
+    driver: local
+
+services:

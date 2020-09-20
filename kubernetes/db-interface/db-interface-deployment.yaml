@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    io.service: db-interface
+  name: db-interface
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.service: db-interface
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+      creationTimestamp: null
+      labels:
+        io.network/sensor-network: "true"
+        io.service: db-interface
+    spec:
+      containers:
+      - image: ubervelocity/sca_dbinterface:1.0
+        imagePullPolicy: ""
+        name: db-interface
+        ports:
+        - containerPort: 4000
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
